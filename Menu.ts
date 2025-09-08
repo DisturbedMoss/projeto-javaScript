@@ -29,7 +29,7 @@ export function main(){
                 break;
 
             case 2:
-                console.log("\nMangá Listado com Sucesso!");
+                console.log("\nListando Mangás...");
                 break;
 
             case 3:
