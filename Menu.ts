@@ -1,8 +1,32 @@
+import { MangaFisico } from './src/model/MangaFisico';
 import leia = require("readline-sync");
+import { Manga } from "./src/model/Mangas";
+import { MangaDigital } from "./src/model/MangaDigital";
+import { MangaController } from './src/controller/MangaController';
 
 export function main(){
 
+    let mangas: MangaController = new MangaController();
+
     let opcao: number;
+
+    //id, titulo, autor, preco, quantidade
+
+    const mangaFisico: MangaFisico = new MangaFisico(1, "One Piece", "Eiichiro Oda", 39.90, 100, 500);
+    mangaFisico.visualizar();
+    mangaFisico.retirar(10);
+    mangaFisico.visualizar();
+    mangaFisico.adicionar(20);
+    mangaFisico.visualizar();
+    mangaFisico.retirar(1000);
+
+    const mangaDigital: MangaDigital = new MangaDigital(2, "Berserk", "Kentaro Miura", 29.90, 200, 50);
+    mangaDigital.visualizar();
+    mangaDigital.retirar(10);
+    mangaDigital.visualizar();
+    mangaDigital.adicionar(20);
+    mangaDigital.visualizar();
+    mangaDigital.retirar(1000);
 
     while(true){
         console.log("\n****** Menu Mangá Mania ******\n");
@@ -30,6 +54,7 @@ export function main(){
 
             case 2:
                 console.log("\nListando Mangás...");
+                mangas.listarTodos();
                 break;
 
             case 3:
